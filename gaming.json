@@ -69,21 +69,11 @@
             "image": "https://image.jeuxvideo.com/images-sm/jaquettes/00045129/jaquette-sega-vintage-collection-streets-of-rage-xbox-360-cover-avant-g-1338561325.jpg",
             "genre": "Beat Them All",
             "console": "MEGADRIVE",
-            "price": 55,
-            "Qty" : 3
-        },
-        {
-            "id": 8,
-            "title": "The Revenge of Shinobi",
-            "description": "The Revenge of Shinobi sur Megadrive est un jeu d'action où le joueur incarne un ninja. L'objectif est ici de se venger des criminels qui vous ont causé du tort. Vous devez nettoyer la zone de chaque niveau avant de pouvoir passer au niveau suivant. Pour cela, vous avez à disposition des shurikens, ainsi que des couteaux de lancer.",
-            "image": "https://image.jeuxvideo.com/images-sm/jaquettes/00045129/jaquette-sega-vintage-collection-streets-of-rage-xbox-360-cover-avant-g-1338561325.jpg",
-            "genre": "Beat Them All",
-            "console": "MEGADRIVE",
             "price": 24,
             "Qty" : 3
         },
         {
-            "id": 9,
+            "id": 8,
             "title": "Mortal Kombat 2",
             "description": "Mortal Kombat II, est un jeu de combat sur Megadrive. Combos, fatalités et autres coups spéciaux, tels sont les ingrédients qui fondent le succès d'un jeu réputé pour la violence de ses affrontements. Le joueur incarne l'un des 12 personnages et doit vaincre un par un l'ensemble de ses concurrents directs pour gagner le tournoi et mettre un terme au règne du maléfique Shao Kahn.",
             "image": "https://image.jeuxvideo.com/images-sm/pc/m/o/mok2pc0f.jpg",
@@ -93,7 +83,7 @@
             "Qty" : 5
         },
         {
-            "id": 10,
+            "id": 9,
             "title": "Metal Gear Solid",
             "description": "Jeu d'infiltration, Metal Gear Solid vous permet d'incarner Solid Snake qui a pour mission d'infiltrer Shadow Moses, une base militaire en Alaska, afin de sauver des otages. Le joueur trouve tout au long de l'aventure de nouvelles armes et nouveaux équipements afin de progresser tout en alternant entre dialogues, séquences d'infiltration et combats contre les boss. Le scénario hollywoodien couplé à de nombreuses cinématiques en font un jeu très cinématographique.",
             "image": "https://image.jeuxvideo.com/images-sm/pc/m/g/mgsopc0f.jpg",
@@ -103,7 +93,7 @@
             "Qty" : 2
         },
         {
-            "id": 11,
+            "id": 10,
             "title": "Resident Evil",
             "description": "Resident Evil est un jeu de Survival-horror dans lequel le joueur incarne un membre de l'équipe Alpha cherchant ses compagnons disparus. Poursuivis par des créatures monstrueuses, les personnages se réfugient dans un manoir près de Racoon-City, mais le sentiment de sécurité est de courte durée....",
             "image": "https://image.jeuxvideo.com/images-sm/pc/r/e/reevpc0f.jpg",
@@ -113,7 +103,7 @@
             "Qty" : 5
         },
         {
-            "id": 12,
+            "id": 11,
             "title": "Tekken 3",
             "description": "Fin du King of Iron Fist Tournament 2. Heihachi a vaincu Kazuya et reprend la tête de Mishima Zaibatsu. Un jour, il entend parler d'un ancien dieu mexicain, Ogre, qui serait attiré par les âmes fortes. Pour l'appâter, Heihachi décide de lancer la troisième édition du tournoi mondialement connu afin que les combattants servent de leurres. Tel est le début de Tekken 3, jeu de combat sur Playstation.",
             "image": "https://image.jeuxvideo.com/images-sm/jaquettes/00021333/jaquette-tekken-3-playstation-3-ps3-cover-avant-g.jpg",
@@ -123,7 +113,7 @@
             "Qty" : 3
         },
         {
-            "id": 13,
+            "id": 12,
             "title": "Final Fantasy VIII",
             "description": "Huitième épisode de la série éponyme Final Fantasy VIII est un jeu de rôle japonais. Le joueur y incarne le jeune Squall, membre d'un groupe militaire d'élite, qui se retrouve mêlé à un conflit dépassant l'imagination. Il doit alors se confronter à un puissant sorcier. Les personnages de cet épisode peuvent être personnalisés avec des sorts puissants récupérés sur les ennemis. En outre, presque une heure de cinématiques en images de synthèse a été implantée.",
             "image": "https://image.jeuxvideo.com/images-sm/pc/f/i/fif8pc0f.jpg",
@@ -133,7 +123,7 @@
             "Qty" : 3
         },
         {
-            "id": 14,
+            "id": 13,
             "title": "Chrono Cross",
             "description": "Chrono Cross sur Playstation 3 est l'adaptation d'un jeu de rôle sorti en 1999 sur PSOne. Vous incarnez un jeune garçon nommé Serge. Vous êtes amené à voyager entre deux mondes parallèles où vous faites la rencontre de nombreux personnages. Chaque personnage a une personnalité différente suivant la dimension où vous vous trouvez. Pour vaincre vos ennemis, vous devez utiliser vos armes et sorts dans des combats au tour par tour.",
             "image": "https://image.jeuxvideo.com/images-sm/ps/c/r/cronps0f.jpg",
@@ -143,7 +133,7 @@
             "Qty" : 2
         },
         {
-            "id": 15,
+            "id": 14,
             "title": "GRAN-TURISMO",
             "description": "Gran Turismo sur Playstation fait figure de référence en matière de simulation automobile. Passez vos licences vous ouvrant l'accès aux compétitions, trouvez-vous une bonne occase, et c'est parti pour la gloire. Plus de 600 voitures au choix de quelques 36 constructeurs sont au menu.",
             "image": "https://image.jeuxvideo.com/images-sm/ps/g/r/grtups0f.jpg",
@@ -153,7 +143,7 @@
             "Qty" : 2
         },
         {
-            "id": 16,
+            "id": 15,
             "title": "Castlevania : the Adventure",
             "description": "Castlevania : The Adventure est un jeu d'action/plates-formes sur Gameboy. Le comte Dracula a encore évolué, assoiffé de vengeance. Vous devez traverser quatre niveaux de donjons, chambres et cryptes pour le vaincre une nouvelle fois. Pour arriver à vos fins, votre seule arme à disposition est un grand fouet métallique.",
             "image": "https://image.jeuxvideo.com/images-sm/jaquettes/00045670/jaquette-castlevania-the-adventure-nintendo-3ds-cover-avant-g-1341565310.jpg",
@@ -163,7 +153,7 @@
             "Qty" : 4
         },
         {
-            "id": 17,
+            "id": 16,
             "title": "The Legend of Zelda : Link's Awakening DX",
             "description": "The Legend of Zelda : Link's Awakening DX est un jeu d'action et d'aventure sur Gameboy. Vous incarnez le jeune Link, qui revient dans son pays natal d'Hyrule. Après d'extraordinaires aventures, notre héros rêve d'un repos mérité. Alors qu'il est sur le bateau qui le ramène au pays, une tempête se déchaîne, le bateau est abîmé et s'échoue sur une île mystérieuse nommée Cocolint. Vous apprenez alors que pour sortir de cet enfer, il vous faudra réveiller le mystique Poisson Rêve.",
             "image": "https://image.jeuxvideo.com/images-sm/jaquettes/00045670/jaquette-castlevania-the-adventure-nintendo-3ds-cover-avant-g-1341565310.jpg",
@@ -173,7 +163,7 @@
             "Qty" : 2
         },
         {
-            "id": 18,
+            "id": 17,
             "title": "Tetris",
             "description": "Tetris est le célèbre puzzle-game dans lequel vous devez empiler des briques afin de constituer des lignes qui s'effaceront au fur et à mesure de votre progression. La difficulté augmente au fil de votre avancée",
             "image": "https://image.jeuxvideo.com/medias-sm/157358/1573575118-2566-jaquette-avant.jpg",
@@ -183,7 +173,7 @@
             "Qty" : 3
         },
         {
-            "id": 19,
+            "id": 18,
             "title": "Pokemon Rouge",
             "description": "Pokémon Rouge est un jeu de rôle sorti sur Gameboy. Dirigez un dresseur de Pokémons qui doit devenir le meilleur d'entre tous. Pour cela, capturez des créatures et faites-les évoluer pour qu'elles deviennent de plus en plus fortes et qu'elles puissent remporter la ligue Pokémon.",
             "image": "https://media.senscritique.com/media/000000110045/source_big/Pokemon_Rouge.png",
@@ -193,7 +183,7 @@
             "Qty" : 2
         },
         {
-            "id": 20,
+            "id": 19,
             "title": "Mystic Quest",
             "description": "Mystic Quest est un spin-off de la saga Final Fantasy orienté action-RPG et développé sur Gameboy. Il est le premier de la série Seiken Densetsu et sera rebaptisé aux Etats-Unis Final Fantasy Adventure. Il raconte l'aventure d'un jeune héros, esclave de l'empire Glaive, qui va s'échapper pour tenter de retrouver la trace des chevaliers Gemme afin de protéger l'arbre mana.",
             "image": "https://image.jeuxvideo.com/images-sm/gb/m/y/myqugb0f.jpg",
@@ -203,7 +193,7 @@
             "Qty": 2
         }, 
         {
-            "id": 21,
+            "id": 20,
             "title": "Batman : The Video Game",
             "description": "Batman sur Gameboy est un jeu d'action/plates-formes s'inspirant du film Batman sorti en 1989. Six niveaux sont disponibles (dont deux avec des phases de tir), parmi lesquels Gotham City, le Musée Flugelheim ou encore la Cathédrale. Battez-vous et utilisez les nombreux gadgets de Batman pour vous hisser jusqu'au Joker et lui faire mordre la poussière.",
             "image": "https://image.jeuxvideo.com/images-sm/gb/b/a/batmgb0f.jpg",
@@ -214,7 +204,7 @@
         
         }, 
         {
-            "id": 22,
+            "id": 21,
             "title": "Halo : Combat Evolved",
             "description": "Halo : Combat Evolved marque la renaissance du style FPS. Affrontez les Covenants sur un monde exotique et inconnu de l’humanité, dans une lutte sans merci pour la survie de la galaxie. Mais attention, dans les profondeurs de l’anneau, une menace bien plus terrible que des extraterrestres se cache...",
             "image": "https://image.jeuxvideo.com/images/pc/h/a/halopc0f.jpg",
@@ -224,17 +214,7 @@
             "qty" : 3
         },
         {
-            "id": 23,
-            "title": "Halo : Combat Evolved",
-            "description": "Halo : Combat Evolved marque la renaissance du style FPS. Affrontez les Covenants sur un monde exotique et inconnu de l’humanité, dans une lutte sans merci pour la survie de la galaxie. Mais attention, dans les profondeurs de l’anneau, une menace bien plus terrible que des extraterrestres se cache...",
-            "image": "https://image.jeuxvideo.com/images/pc/h/a/halopc0f.jpg",
-            "genre": "FPS",
-            "console": "XBOX",
-            "price": 55,
-            "qty" : 8
-        },
-        {
-            "id": 24,
+            "id": 22,
             "title": "Grand Theft Auto : San Andreas",
             "description": "San Andreas est un jeu d'action de type bac à sable. Le joueur y incarne Carl Johnson, de retour à Los Santos et qui y découvre la dure organisation des gangs. Celui-ci devra y faire sa place en accomplissant un certain nombre de missions peu recommandables pour gagner le respect de ses pairs.",
             "image": "https://image.jeuxvideo.com/images-sm/pc/g/t/gtsapc0f.jpg",
@@ -244,7 +224,7 @@
             "qty" : 2
         },
         {
-            "id": 25,
+            "id": 23,
             "title": "The Elder Scrolls III : Morrowind",
             "description": "Nouvelle entrée de la série des Elders Scrolls, Morrowind permet au joueur d’incarner le personnage de son choix dans un open world sombre et mature. L’île de Vvardenfell abrite de nombreuses créatures et individus aux opinions et objectifs bien distincts, mais c’est à vous des les unir et d’incarner la prophétie tant attendue.",
             "image": "https://image.jeuxvideo.com/images-sm/pc/g/t/gtsapc0f.jpg",
@@ -254,7 +234,7 @@
             "qty" : 6
         },
         {
-            "id": 26,
+            "id": 24,
             "title": " Halo 2",
             "Description" : "Dans la suite du maintes fois acclamé Halo : Combat Evolved, la lutte contre les Covenants continue. Cette fois, la Terre est en danger et il ne reste que vous pour protéger l’humanité. Portez le combat chez l’ennemi et remportez la dernière bataille.",
             "image": "http://www.historiquedesjeuxvideo.com/bdd/jeu/img/XBox/884.jpg",
