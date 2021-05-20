@@ -29,36 +29,36 @@ function entryPoint( parentIdName,  totalPriceIdName, totalItemName)
 {
     let myCatalog=[];
     myCatalog[0]=   {
-                    "id": "001",
-                    "title": "Mario Bross",
-                    "description": "un plombier roulant dans un kart",
-                    "genre": "course",
-                    "image": "Smile.png",
-                    "price": "3.14",
-                    "console": "XBoX",
-                    "Qty" : 1
-                    };
+                    "id": "1",
+                    "title": "Super Mario World",
+                    "description": "Super Mario World sur Super Nes vous fait incarner les deux super plombiers Mario et Luigi, à la poursuite de Bowser qui a kidnappé pour la énième fois la princesse Peach. Exploitez de nouveaux objets tels que la plume permettant aux héros de planer pendant un court instant, et faites surtout connaissance avec le petit dinosaure vert Yoshi qui apparaît avec sa tribu pour la toute première fois dans la série.",
+                    "image": "https://image.jeuxvideo.com/images-sm/sn/s/m/smwosn0f.jpg",
+                    "genre": "Combat",
+                    "console": "SNES",
+                    "price": "32",
+                    "Qty": "10"
+               };
     myCatalog[1]=   {
-                    "id": "002",
-                    "title": "Tweety & Sylvester",
-                    "description": "Titi et gros minet se ballade en foret",
-                    "genre": "rpg",
-                    "image": "Worried.png",
-                    "price": "1.23",
-                    "console": "PlayStation",
-                    "Qty" : 2
+                    "id": "2",
+                    "title": "The Legend of Zelda : a Link to the Past",
+                    "description": "Dans the Legend of Zelda : A Link to the Past, le joueur dirige Link dans sa quête pour sauver Hyrule. Dans ce jeu d'action/aventure en 2D, il est possible de basculer du monde des ténèbres à celui de la lumière pour sauver la princesse Zelda du sorcier Agahnim et trouver les nombreux objets nécessaires à l'accomplissement de la quête",
+                    "image": "https://image.jeuxvideo.com/images/jaquettes/00051134/jaquette-the-legend-of-zelda-a-link-to-the-past-wii-u-wiiu-cover-avant-g-1386876665.jpg",
+                    "genre": "Aventure",
+                    "console": "SNES",
+                    "price": "22",
+                     "Qty": "5"
                     };
     myCatalog[2]=   {
-                    "id": "003",
-                    "title": "Kung Fu Fu",
-                    "description": "aie, ouille...",
-                    "genre": "Combat",
-                    "image": "Worried.png",
-                    "price": "3.00",
-                    "console": "PlayStation",
-                    "Qty" : 3
+                    "id": "3",
+                    "title": "Super Mario Kart",
+                    "description": "Super Mario Kart sur Super Nintendo est un jeu de courses reprenant l'univers et les personnages de Mario. Après avoir choisi un pilote parmi les huit proposés, lancez-vous dans les quatre coupes différentes pour essayer d'atteindre la plus haute marche du podium. Grâce à des bonus ramassés sur le circuit, tous les coups sont permis, à commencer par le largage de peaux de banane et l'envoi de carapaces. Le mode Battle permet d'ailleurs d'affronter les autres à coup de carapaces.",
+                    "image": "https://image.jeuxvideo.com/medias/147938/1479376108-5962-jaquette-avant.jpg",
+                    "genre": "Course",
+                    "console": "SNES",
+                    "price": "21",
+                    "Qty" : "4"
                     };
-    let myIdList=[ "003","002"]
+    let myIdList=[ "3","2"]
    fillCaddieBoddie( parentIdName, totalPriceIdName, totalItemName, myIdList, myCatalog)
 }
 function increaseTotalItemNb()
@@ -238,7 +238,7 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     let imgId=  document.createElement("img");
     imgId.src= imagePath;
     imgId.alt= "poster";
-    imgId.width= "200";
+    imgId.width= "60";
     imgId.heigth= "auto";
     imgId.title= title;
     imgId.style= "margin: 3px";
@@ -277,7 +277,7 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     rowId.innerText= "Nombre";
     colId.appendChild(rowId);
     rowId= document.createElement("div");
-    rowId.className= "row";
+    rowId.className= "row text-center";
     rowId.id= buildItemIdNombre( refId );
     rowId.innerText= "1";
     colId.appendChild(rowId);
@@ -285,12 +285,12 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     rowId.className= "row";
     colId.appendChild(rowId);
     let button= document.createElement("button");
-    button.className= "btn";
+    button.className= "btn fs-4 text-center font-weight-bold text-primary";
     button.innerText= "+"
     button.setAttribute("onclick", `increaseOneItem("${refId}")`);
     rowId.appendChild(button);
     button= document.createElement("button");
-    button.className= "btn";
+    button.className= "btn fs-4 text-center font-weight-bold text-primary";
     button.innerText= "-"
     button.setAttribute("onclick", `decreaseOneItem("${refId}")`);
     rowId.appendChild(button);
