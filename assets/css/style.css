@@ -12,3 +12,8 @@ body {
     margin: 2px;
     border: 1px solid black;
 }
+.modal-body
+{
+    max-height: 700px;
+    overflow-y: auto;
+}

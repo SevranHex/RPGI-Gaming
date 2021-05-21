@@ -16,13 +16,12 @@ const euroFormatter = new Intl.NumberFormat('it-IT', {
         style: 'currency',
         currency: 'EUR'
         })
-      
+
 let totalPrice= 0,
-    totalItem= 0;
-let totalpriceId, 
-    totalItemId,
-    savedSelectedList,
-    savedBodyIdName,
+    totalItem= 0,
+    totalpriceId, 
+    totalItemId;
+let savedSelectedList,
     savedItemCatalog;
 
 function entryPoint( parentIdName,  totalPriceIdName, totalItemName)
@@ -58,8 +57,18 @@ function entryPoint( parentIdName,  totalPriceIdName, totalItemName)
                     "price": "21",
                     "Qty" : "4"
                     };
-    let myIdList=[ "3","2"]
-   fillCaddieBoddie( parentIdName, totalPriceIdName, totalItemName, myIdList, myCatalog)
+    myCatalog[3]=   {
+                    "id": "4",
+                    "title": "Street Fighter 2",
+                    "description": "Street Fighter II est le deuxième épisode du jeu de combat sorti en 1988 sur diverses consoles et bornes d'arcade. Vous avez le choix parmi huit personnages ayant chacun son propre style de jeu et ses propres techniques spéciales. Dans le mode solo, vous devez affronter les sept autres personnages plus quatre boss cachés. A deux, chacun choisit son personnage pour tenter d'éliminer l'autre.",
+                    "image": "https://image.jeuxvideo.com/images/pc/s/t/strepc0f.jpg",
+                    "genre": "Combat",
+                    "console": "SNES",
+                    "price": "25",
+                    "Qty" : "3"
+                    };
+    let myIdList=[ "1","3","2"];
+    fillCaddieBoddie( parentIdName, totalPriceIdName, totalItemName, myIdList, myCatalog);
 }
 function increaseTotalItemNb()
 {
@@ -102,9 +111,8 @@ function increaseOneItem( itemRefName )
 {
     // Can't sell more item than we have in stock.
     let maxAvailableItem= getItemParam( itemRefName, itemQuantity);
-    console.log(`increaseOneItem( ${itemRefName} ) = ${maxAvailableItem}`)
     // Update the item number
-    let itemfullName= buildItemIdNombre(itemRefName);
+    let itemfullName= buildItemIdNumber(itemRefName);
     let itemId= document.getElementById(itemfullName);
     if (parseInt(itemId.innerText) >= maxAvailableItem)
     {
@@ -125,7 +133,7 @@ function increaseOneItem( itemRefName )
 function decreaseOneItem( itemRefName )
 {
     // Update the item number
-    let itemfullName= buildItemIdNombre(itemRefName);
+    let itemfullName= buildItemIdNumber(itemRefName);
     let itemId= document.getElementById(itemfullName);
     if (parseInt(itemId.innerText) == 1)
     {
@@ -180,7 +188,7 @@ function removeSelectedItem( itemRefName)
             });
             totalPriceUpdate( priceValue)
             // Remove the selected item from display
-            let itemId= document.getElementById( buildItemIdName (itemRefName));
+            let itemId= document.getElementById( itemRefName);
             itemId.remove();
             // Update the selected list
             savedSelectedList.splice(idx,1);
@@ -191,7 +199,7 @@ function removeSelectedItem( itemRefName)
         }
     }
 }
-function buildItemIdNombre( refId )
+function buildItemIdNumber( refId )
 {
     return `${prefixNombre}${refId}`
 }
@@ -278,7 +286,7 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     colId.appendChild(rowId);
     rowId= document.createElement("div");
     rowId.className= "row text-center";
-    rowId.id= buildItemIdNombre( refId );
+    rowId.id= buildItemIdNumber( refId );
     rowId.innerText= "1";
     colId.appendChild(rowId);
     rowId= document.createElement("div");
@@ -329,7 +337,6 @@ function fillCaddieBoddie( bodyIdName, totalPriceIdName, totalItemName, selected
 {
     if (selectedItemList.length <= 0) return;
     savedSelectedList= selectedItemList;
-    savedBodyIdName= bodyIdName;
     savedItemCatalog= [...allItemList];
     let bodyTagId= document.getElementById(bodyIdName);
     totalPriceId= document.getElementById(totalPriceIdName);
