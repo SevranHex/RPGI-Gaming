@@ -2,6 +2,40 @@
     background-color: black;
 }
 
+body {
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, #434343, #000000);
+}
+
 .gameParts {
-    width: 50%;
+    width: 300px;
+    height: auto;
+    float: left;
+}
+
+h2 {
+    font-size: medium;
+    color: whitesmoke;
+    margin-top: 5%;
+}
+
+p {
+    font-size: smaller;
+    color: whitesmoke;
+}
+
+.qtyCss {
+    color: #DC3545;
+    font-weight: bolder;
+}
+
+.priceCss {
+    color: #DC3545;
+    font-weight: bolder;
+}
+
+#notFind {
+    font-size: x-large;
+    color: #DC3545;
 }

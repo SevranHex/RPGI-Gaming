@@ -1,6 +1,6 @@
 //JSON -> JS
 function getInfo() {
-    document.getElementById("gameList").innerText = ""
+    document.getElementById("gameChoice").innerText = ""
     var x = document.getElementById("consoleSelect").selectedIndex;
     var xx = document.getElementById("genreSelect").selectedIndex;
 
@@ -11,11 +11,12 @@ function getInfo() {
     fetch("gaming.json")
         .then(data => data.json())
         .then(gameHome => {
+            let isFind = false
             gameHome['products'].forEach(element => {
                 if (element.console.toLowerCase() === y[x].value.toLowerCase() && element.genre.toLowerCase() === yy[xx].value.toLowerCase()) {
                     // alert(element.console + " and " + element.genre)
-
-                    //Création virtuel d'un élément HTML
+                    isFind = true
+                        //Création virtuel d'un élément HTML
                     let game = document.createElement('div')
                     let image = document.createElement('img')
                     let ref = document.createElement('p')
@@ -25,12 +26,12 @@ function getInfo() {
                     let gamePartsRight2 = document.createElement('div')
                     let genre = document.createElement('p')
                     let console = document.createElement('p')
-                    let price = document.createElement('p');
+                    let price = document.createElement('p')
                     let qty = document.createElement('p')
                     let buy = document.createElement('button')
 
                     //Ajout des classes bootstrap
-                    game.className = "col-6 col-sm-3 my-4"
+                    game.className = "col-6 col-sm-3 my-4 justify-content-center me-5"
                     game.setAttribute("data-bs-container", "body")
                     game.setAttribute("data-bs-toggle", "popover")
                     game.setAttribute("data-bs-content", element.description)
@@ -39,20 +40,21 @@ function getInfo() {
                     image.src = element.image
                     gamePartsRight.className = "gameParts"
                     title.textContent = element.title
+                    title.className = "fs-5 text badge bg-danger"
                     description.textContent = element.description.slice(0, 100) + "..."
-                    gamePartsRight2.className = "row me-5"
+                    gamePartsRight2.className = "row"
                     genre.textContent = element.genre
                     genre.className = "col"
                     console.textContent = element.console
                     console.className = "col"
                     price.textContent = element.price + "€"
-                    price.className = "col"
+                    price.className = "col priceCss"
                     qty.textContent = element.qty + " en stock"
-                    qty.className = "col"
-                    ref.textContent = "réf:" + element.id
+                    qty.className = "col qtyCss"
+                    ref.textContent = "réf: " + element.id
                     ref.className = "col"
                     buy.innerHTML = "Ajouter au panier"
-                    buy.className = "btn btn-outline-dark btn-sm"
+                    buy.className = "btn btn-outline-danger btn-sm"
 
                     //Mise en place dans le HTML
                     gamePartsRight.appendChild(title)
@@ -66,14 +68,15 @@ function getInfo() {
                     gamePartsRight.appendChild(buy)
                     game.appendChild(image)
                     game.appendChild(gamePartsRight)
-                    gameList.appendChild(game)
+                    gameChoice.appendChild(game)
                     let popover = new bootstrap.Popover(document.querySelector("#element_" + element.id), {
                         trigger: 'hover focus'
                     })
-                } else {
-                    // alert("Rien à afficher")
                 }
-            });
+            })
+            if (!isFind) {
+                alert("Aucun jeu ne correspond à votre recherche :(")
+            }
         })
         .catch(error => alert("Une erreur est survenue : " + error))
 }

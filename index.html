@@ -15,15 +15,17 @@
     <!-- ---------------------------------------------------------------Navbar--------------------------------------------------------------- -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark" id="navbar">
         <div class="container-fluid">
-            <!-- logo -->
+            <!-- --------------------------------------------------------Logo ---------------------------->
             <a class="navbar-brand ms-5 " href="index.html"><img src="assets/images/logo.gif" width="120" height="120" alt="logo RPGI"></a>
-            <select class="form-select form-select-sm  ms-5" aria label="Consoles" id="consoleSelect">
+            <select class="form-select form-select-sm ms-5" aria label="Consoles" id="consoleSelect">
+            <!----------------------------------------------------Choix consoles et genres ---------------------------->
                 <option value="SNES">SNES</option>
                 <option value="MEGADRIVE">MEGADRIVE</option>
                 <option value="PLAYSTATION">PLAYSTATION</option>
                 <option value="XBOX">XBOX</option>
                 <option value="GAMEBOY COLOR">GAMEBOY COLOR</option>
             </select>
+
             <select class="form-select form-select-sm ms-5" aria-label="Genres" id="genreSelect">
                 <option value="ACTION">ACTION</option>
                 <option value="COMBAT">COMBAT</option>
@@ -34,8 +36,6 @@
                 <option value="FPS">FPS</option>
                 <option value="PUZZLE">PUZZLE</option>
                 <option value="BEAT THEM ALL">BEAT THEM ALL</option>
-
-
             </select>
             <button class="btn btn-outline-danger mx-5 text-light" onclick="getInfo()">Search</button>
             <!-------------------------------------------------------------Bouton trigger fenêtre modale------------------------------------------------------------ -->
@@ -46,29 +46,11 @@
                 </button>
         </div>
     </nav>
-
-    <!-- -----------------------------------------------------------------Fenêtre modale------------------------------------------------------------------------- -->
-    <!-- <div class="modal fade" tabindex="-1" id="basket" role="dialog" aria-hidden="true" aria-labelledby="basket">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="basket">Titre</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Contenu</p>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <button type="button" class="btn btn-dark col-md-4" data-bs-dismiss="modal">Valider ma commande</button>
-                            <button type="button" class="btn btn-danger col-md-4 ms-auto">Vider mon panier</button>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-        </div>-->
+    <!-- ----------------------------------------------------Fin de la navbar --------------------------------------->
+    <!-- Zone d'affichage des jeux -->
     <div class="container-fluid">
-        <div class="row d-flex justify-content-center" id="gameList"></div>
+        <div class="row d-flex justify-content-center" id="gameChoice"></div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
