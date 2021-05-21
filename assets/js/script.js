@@ -138,7 +138,7 @@ function entryPoint( parentIdName,  totalPriceIdName, totalItemName)
                     "Qty" : "3"
                     };
     let myIdList=[ "1","3","2"];
-    fillCaddieBoddie( parentIdName, totalPriceIdName, totalItemName, myIdList, myCatalog);
+    fillCaddieBoddy( parentIdName, totalPriceIdName, totalItemName, myIdList, myCatalog);
 }
 function increaseTotalItemNb()
 {
@@ -424,7 +424,7 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     // And one more item into the basket !
     increaseTotalItemNb();
 }
-function fillCaddieBoddie( bodyIdName, totalPriceIdName, totalItemName, selectedItemList, allItemList)
+function fillCaddieBoddy( bodyIdName, totalPriceIdName, totalItemName, selectedItemList, allItemList)
 {
     if (selectedItemList.length <= 0) return;
     savedSelectedList= selectedItemList;
@@ -443,11 +443,8 @@ function fillCaddieBoddie( bodyIdName, totalPriceIdName, totalItemName, selected
                     totalPriceUpdate( itemIdx.price);
                 }
             })
-            if (!isFind) {
-                alert("Aucun jeu ne correspond à votre recherche :(")
-            }
-        })
-        .catch(error => alert("Une erreur est survenue : " + error))
+        });
+    //debug console.info(bodyTagId);
 }
 
 
