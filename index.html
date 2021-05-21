@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="assets/css/style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>RPGI - Gaming</title>
 </head>
 
 <body>
@@ -22,18 +22,22 @@
                 <option value="MEGADRIVE">MEGADRIVE</option>
                 <option value="PLAYSTATION">PLAYSTATION</option>
                 <option value="XBOX">XBOX</option>
-                <option value="GAMEBOY">GAMEBOY</option>
+                <option value="GAMEBOY COLOR">GAMEBOY COLOR</option>
             </select>
             <select class="form-select form-select-sm ms-5" aria-label="Genres" id="genreSelect">
                 <option value="ACTION">ACTION</option>
                 <option value="COMBAT">COMBAT</option>
                 <option value="AVENTURE">AVENTURE</option>
                 <option value="COURSE">COURSE</option>
-                <option value="PLATES-FORMES">PLATES-FORMES</option>
+                <option value="PLATE-FORMES">PLATE-FORMES</option>
                 <option value="RPG">RPG</option>
                 <option value="FPS">FPS</option>
+                <option value="PUZZLE">PUZZLE</option>
+                <option value="BEAT THEM ALL">BEAT THEM ALL</option>
+
+
             </select>
-            <button class="btn btn-outline-danger mx-5 text-light" onclick="myFunction()">Search</button>
+            <button class="btn btn-outline-danger mx-5 text-light" onclick="getInfo()">Search</button>
             <!-------------------------------------------------------------Bouton trigger fenêtre modale------------------------------------------------------------ -->
             <button type="button" class="btn btn-outline-danger mx-5" data-bs-toggle="modal" data-bs-target="#basket" data-bs-titre="Votre panier" data-bs-class="cModalRouge" data-bs-contenu="Texte du modal + choix et actions...">       
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
@@ -64,7 +68,7 @@
             </div> 
         </div>-->
     <div class="container-fluid">
-        <div id="demo"></div>
+        <div class="row d-flex justify-content-center" id="gameList"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

@@ -1,4 +1,90 @@
-// //JSON -> JS
+//JSON -> JS
+function getInfo() {
+    document.getElementById("gameList").innerText = ""
+    var x = document.getElementById("consoleSelect").selectedIndex;
+    var xx = document.getElementById("genreSelect").selectedIndex;
+
+    var y = document.getElementById("consoleSelect").options;
+    var yy = document.getElementById("genreSelect").options;
+    // console.log(y[x].value + " and " + yy[xx].value)
+
+    fetch("gaming.json")
+        .then(data => data.json())
+        .then(gameHome => {
+            gameHome['products'].forEach(element => {
+                if (element.console.toLowerCase() === y[x].value.toLowerCase() && element.genre.toLowerCase() === yy[xx].value.toLowerCase()) {
+                    // alert(element.console + " and " + element.genre)
+
+                    //Création virtuel d'un élément HTML
+                    let game = document.createElement('div')
+                    let image = document.createElement('img')
+                    let ref = document.createElement('p')
+                    let gamePartsRight = document.createElement('div')
+                    let title = document.createElement('h2')
+                    let description = document.createElement('p')
+                    let gamePartsRight2 = document.createElement('div')
+                    let genre = document.createElement('p')
+                    let console = document.createElement('p')
+                    let price = document.createElement('p');
+                    let qty = document.createElement('p')
+                    let buy = document.createElement('button')
+
+                    //Ajout des classes bootstrap
+                    game.className = "col-6 col-sm-3 my-4"
+                    game.setAttribute("data-bs-container", "body")
+                    game.setAttribute("data-bs-toggle", "popover")
+                    game.setAttribute("data-bs-content", element.description)
+                    image.className = "gameParts"
+                    game.id = "element_" + element.id
+                    image.src = element.image
+                    gamePartsRight.className = "gameParts"
+                    title.textContent = element.title
+                    description.textContent = element.description.slice(0, 100) + "..."
+                    gamePartsRight2.className = "row me-5"
+                    genre.textContent = element.genre
+                    genre.className = "col"
+                    console.textContent = element.console
+                    console.className = "col"
+                    price.textContent = element.price + "€"
+                    price.className = "col"
+                    qty.textContent = element.qty + " en stock"
+                    qty.className = "col"
+                    ref.textContent = "réf:" + element.id
+                    ref.className = "col"
+                    buy.innerHTML = "Ajouter au panier"
+                    buy.className = "btn btn-outline-dark btn-sm"
+
+                    //Mise en place dans le HTML
+                    gamePartsRight.appendChild(title)
+                    gamePartsRight.appendChild(description)
+                    gamePartsRight.appendChild(gamePartsRight2)
+                    gamePartsRight2.appendChild(genre)
+                    gamePartsRight2.appendChild(console)
+                    gamePartsRight2.appendChild(price)
+                    gamePartsRight2.appendChild(qty)
+                    gamePartsRight2.appendChild(ref)
+                    gamePartsRight.appendChild(buy)
+                    game.appendChild(image)
+                    game.appendChild(gamePartsRight)
+                    gameList.appendChild(game)
+                    let popover = new bootstrap.Popover(document.querySelector("#element_" + element.id), {
+                        trigger: 'hover focus'
+                    })
+                } else {
+                    // alert("Rien à afficher")
+                }
+            });
+        })
+        .catch(error => alert("Une erreur est survenue : " + error))
+}
+
+
+
+
+
+
+
+//TEST
 // fetch('gaming.json')
 //     .then(data => data.json())
 //     .then(gameCategories => {
@@ -35,58 +121,6 @@
 //     }
 // }
 // document.getElementById("consoles").selectedIndex
-function myFunction() {
-    document.getElementById("demo").innerText = ""
-    var x = document.getElementById("consoleSelect").selectedIndex;
-    var xx = document.getElementById("genreSelect").selectedIndex;
-
-    var y = document.getElementById("consoleSelect").options;
-    var yy = document.getElementById("genreSelect").options;
-    console.log(y[x].value + " and " + yy[xx].value)
-
-    fetch("gaming.json").then(data => data.json()).then(movieList => {
-            movieList['products'].forEach(movie => {
-                if (movie.console.toLowerCase() === y[x].value.toLowerCase() && movie.genre.toLowerCase() === yy[xx].value.toLowerCase()) {
-                    console.log(movie.console + " and " + movie.genre)
-                        //Création virtuel d'un élément HTML
-                    let movieCard = document.createElement("div")
-                    let movieImg = document.createElement("img")
-                    let moviePartsRight = document.createElement("div")
-                    let movieOriginalTitle = document.createElement("h2")
-                    let movieDesc = document.createElement("p")
-                    let movieAverage = document.createElement("div")
-
-                    //Ajout des classes bootstrap
-                    movieCard.className = "col-6 col-sm-3 my-4"
-                    movieCard.setAttribute("data-bs-container", "body")
-                    movieCard.setAttribute("data-bs-toggle", "popover")
-                    movieCard.setAttribute("data-bs-placement", "top")
-                    movieCard.setAttribute("data-bs-content", movie.description)
-                    movieImg.className = "movieParts"
-                    movieCard.id = "movie_" + movie.id
-                    movieImg.src = movie.image
-                    moviePartsRight.className = "movieParts p-2"
-                    movieOriginalTitle.textContent = movie.title
-                    movieDesc.textContent = movie.description.slice(0, 200) + " ..."
-
-                    //Mise en place dans le HTML
-                    moviePartsRight.appendChild(movieOriginalTitle)
-                    moviePartsRight.appendChild(movieDesc)
-                    moviePartsRight.appendChild(movieAverage)
-                    movieCard.appendChild(movieImg)
-                    movieCard.appendChild(moviePartsRight)
-                    demo.appendChild(movieCard)
-                    var popover = new bootstrap.Popover(document.querySelector("#movie_" + movie.id), {
-                        trigger: 'hover focus'
-                    })
-                } else {
-                    console.log("rien")
-                }
-            });
-        })
-        .catch(error => console.log("Une erreur est survenue : " + error))
-}
-
 
 
 
