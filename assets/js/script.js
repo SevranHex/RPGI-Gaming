@@ -75,9 +75,9 @@ function increaseTotalItemNb()
     totalItem += 1;
     totalItemId.innerText= totalItem;
 }
-function decreaseTotalItemNb()
+function decreaseTotalItemNb( nbr )
 {
-    totalItem -= 1;
+    totalItem -= parseInt(nbr);
     if (totalItem < 0)
     {
         totalItem= 0;
@@ -133,6 +133,25 @@ function getItemParam( itemRefName, paramType )
      })
     return answer;
 }
+function totalPriceUpdate( deltaPrice)
+{
+    let deltaPriceValue= parseFloat(deltaPrice);
+    console.log( `totalPriceUpdate(): ${deltaPrice}`);
+    if (deltaPriceValue >= 0)
+    {
+        // Add a new price
+        totalPrice+= deltaPriceValue;
+    }
+    else
+    {
+        // Remove a price   ;-)
+        if (totalPrice >= deltaPriceValue)
+        {
+            totalPrice+= deltaPriceValue;
+        }
+    }
+    totalPriceId.innerText= euroFormatter.format(parseFloat(totalPrice));
+}
 function increaseOneItem( itemRefName )
 {
     // Can't sell more item than we have in stock.
@@ -144,7 +163,7 @@ function increaseOneItem( itemRefName )
     {
         let itemIdTitle= getItemParam( itemRefName, itemTitle);
         let itemIdConsole= getItemParam( itemRefName, itemConsoleType);
-        alert(`On voudrait bien vous en vendre plus mais on n'en n'a pas assez de "${itemIdTitle}" pour "${itemIdConsole}" en stock. Désolé...`);
+        alert(`Oups ! On n'en n'a pas assez de "${itemIdTitle}" pour "${itemIdConsole}" en stock. Désolé...`);
     }
     else
     {
@@ -174,26 +193,8 @@ function decreaseOneItem( itemRefName )
         itemfullName= buildItemIdPrice(itemRefName);
         itemId= document.getElementById(`${itemfullName}`);
         totalPriceUpdate(`-${itemId.innerText}`);
-        decreaseTotalItemNb();
+        decreaseTotalItemNb( 1 );
     }
-}
-function totalPriceUpdate( deltaPrice)
-{
-    let deltaPriceValue= parseFloat(deltaPrice);
-    if (deltaPriceValue >= 0)
-    {
-        // Add a new price
-        totalPrice+= deltaPriceValue;
-    }
-    else
-    {
-        // Remove a price   ;-)
-        if (totalPrice >= deltaPriceValue)
-        {
-            totalPrice+= deltaPriceValue;
-        }
-    }
-    totalPriceId.innerText= euroFormatter.format(parseFloat(totalPrice));
 }
 function removeSelectedItem( itemRefName)
 {
@@ -204,25 +205,31 @@ function removeSelectedItem( itemRefName)
         if (savedSelectedList[idx] == originalitemRefName)
         {
             // Item to be removed found !
-            console.log(`removeSelectedItem( ${itemRefName} ) --> original: ${originalitemRefName}`);
             let priceValue= 0;
+            let itemnumber= 1;
             // Search its price
             savedItemCatalog.forEach( itemIdx => {
                 if (itemIdx.id == originalitemRefName)
                 {
-                    priceValue= parseFloat(`-${itemIdx.price}`);
+                    console.info(itemIdx);
+                    let itemNumberId= document.getElementById( buildItemIdNumber( originalitemRefName ));
+                    console.info(itemNumberId);
+                    itemNumber= parseInt( itemNumberId.innerText);
+                    let itemPriceId= document.getElementById( buildItemIdPrice( originalitemRefName ));
+                    let value= parseFloat(itemPriceId.innerText.substr( 0, itemPriceId.innerText.length-2));
+                    priceValue= itemNumber * value;
+                    totalPriceUpdate( `-${priceValue}`);
+                    // Remove the selected item from display
+                    let itemId= document.getElementById( buildItemIdName( originalitemRefName));
+                    console.info(itemId);
+                    itemId.remove();
+                    // Update the selected list
+                    savedSelectedList.splice(idx,1);
+                    // Snif ! One less item...
+                    decreaseTotalItemNb( itemnumber);
                 }
             });
-            totalPriceUpdate( priceValue);
-            // Remove the selected item from display
-            let itemId= document.getElementById( buildItemIdName(itemRefName));
-            console.info(itemId);
-            itemId.remove();
-            // Update the selected list
-            savedSelectedList.splice(idx,1);
-            // Snif ! One less item...
-            decreaseTotalItemNb();
-            // Done
+           // Done
             break;
         }
     }
@@ -265,7 +272,6 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     imgId.width= "60";
     imgId.heigth= "auto";
     imgId.title= title;
-    imgId.style= "margin: 3px";
     colId.appendChild(imgId);
     // Create the second column
     colId= document.createElement("div");
@@ -301,7 +307,8 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     rowId.innerText= "Nombre";
     colId.appendChild(rowId);
     rowId= document.createElement("div");
-    rowId.className= "row text-center";
+    rowId.className= "row";
+    rowId.style="text-align: center";
     rowId.id= buildItemIdNumber( refId );
     rowId.innerText= "1";
     colId.appendChild(rowId);
@@ -309,12 +316,12 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     rowId.className= "row";
     colId.appendChild(rowId);
     let button= document.createElement("button");
-    button.className= "btn fs-4 text-center font-weight-bold text-primary";
+    button.className= "btn fs-4 font-weight-bold text-primary";
     button.innerText= "+"
     button.setAttribute("onclick", `increaseOneItem("${refId}")`);
     rowId.appendChild(button);
     button= document.createElement("button");
-    button.className= "btn fs-4 text-center font-weight-bold text-primary";
+    button.className= "btn fs-4 font-weight-bold text-primary";
     button.innerText= "-"
     button.setAttribute("onclick", `decreaseOneItem("${refId}")`);
     rowId.appendChild(button);
@@ -324,7 +331,7 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
     mainItemId.appendChild(colId);
     // Add the unitary price
     rowId= document.createElement("div");
-    rowId.className= "row text-center";
+    rowId.className= "row";
     rowId.innerText= "Prix unitaire"
     colId.appendChild(rowId);
     rowId= document.createElement("div");
