@@ -146,7 +146,7 @@
             "title": "Castlevania : the Adventure",
             "description": "Castlevania : The Adventure est un jeu d'action/plates-formes sur Gameboy. Le comte Dracula a encore évolué, assoiffé de vengeance. Vous devez traverser quatre niveaux de donjons, chambres et cryptes pour le vaincre une nouvelle fois. Pour arriver à vos fins, votre seule arme à disposition est un grand fouet métallique.",
             "image": "https://image.jeuxvideo.com/images-sm/jaquettes/00045670/jaquette-castlevania-the-adventure-nintendo-3ds-cover-avant-g-1341565310.jpg",
-            "genre": "Plate-forme",
+            "genre": "Plate-formes",
             "console": "Gameboy Color",
             "price": 23,
             "qty": 4
@@ -156,7 +156,7 @@
             "title": "The Legend of Zelda : Link's Awakening DX",
             "description": "The Legend of Zelda : Link's Awakening DX est un jeu d'action et d'aventure sur Gameboy. Vous incarnez le jeune Link, qui revient dans son pays natal d'Hyrule. Après d'extraordinaires aventures, notre héros rêve d'un repos mérité. Alors qu'il est sur le bateau qui le ramène au pays, une tempête se déchaîne, le bateau est abîmé et s'échoue sur une île mystérieuse nommée Cocolint. Vous apprenez alors que pour sortir de cet enfer, il vous faudra réveiller le mystique Poisson Rêve.",
             "image": "https://media.senscritique.com/media/000017767313/source_big/The_Legend_of_Zelda_Link_s_Awakening_DX.png",
-            "genre": "Plate-forme",
+            "genre": "Aventure",
             "console": "Gameboy Color",
             "price": 65,
             "qty": 2
@@ -176,7 +176,7 @@
             "title": "Pokemon Rouge",
             "description": "Pokémon Rouge est un jeu de rôle sorti sur Gameboy. Dirigez un dresseur de Pokémons qui doit devenir le meilleur d'entre tous. Pour cela, capturez des créatures et faites-les évoluer pour qu'elles deviennent de plus en plus fortes et qu'elles puissent remporter la ligue Pokémon.",
             "image": "https://media.senscritique.com/media/000000110045/source_big/Pokemon_Rouge.png",
-            "genre": "Plate-forme",
+            "genre": "Plate-formes",
             "console": "Gameboy Color",
             "price": 36,
             "qty": 2
