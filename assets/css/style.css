@@ -8,6 +8,7 @@ body {
     background: linear-gradient(to right, #434343, #000000);
 }
 
+<<<<<<< HEAD
 .gameParts {
     width: 300px;
     height: auto;
@@ -38,4 +39,19 @@ p {
 #notFind {
     font-size: x-large;
     color: #DC3545;
+=======
+#navbar {
+    background-color: black;
+}
+
+.item-info
+{
+    margin: 2px;
+    border: 1px solid black;
+}
+.modal-body
+{
+    max-height: 700px;
+    overflow-y: auto;
+>>>>>>> 44dc7773f1ed8685f7a0ebdb36576d8553e99b06
 }

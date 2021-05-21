@@ -17,6 +17,7 @@
         <div class="container-fluid">
             <!-- --------------------------------------------------------Logo ---------------------------->
             <a class="navbar-brand ms-5 " href="index.html"><img src="assets/images/logo.gif" width="120" height="120" alt="logo RPGI"></a>
+<<<<<<< HEAD
             <select class="form-select form-select-sm ms-5" aria label="Consoles" id="consoleSelect">
             <!----------------------------------------------------Choix consoles et genres ---------------------------->
                 <option value="SNES">SNES</option>
@@ -40,10 +41,83 @@
             <button class="btn btn-outline-danger mx-5 text-light" onclick="getInfo()">Search</button>
             <!-------------------------------------------------------------Bouton trigger fenêtre modale------------------------------------------------------------ -->
             <button type="button" class="btn btn-outline-danger mx-5" data-bs-toggle="modal" data-bs-target="#basket" data-bs-titre="Votre panier" data-bs-class="cModalRouge" data-bs-contenu="Texte du modal + choix et actions...">       
+=======
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse mx-5 " id="navbarScroll">
+                <ul class="navbar-nav m-auto navbar-nav-scroll " style="--bs-scroll-height: 100px;">
+                    <li class="nav-item dropdown mx-5 ">
+                        <a class="nav-link dropdown-toggle mx-5 " id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  CONSOLES
+                </a>
+                        <ul class="dropdown-menu bg-dark border-danger" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item text-light" href="#">SNES</a></li>
+                            <li><a class="dropdown-item text-light" href="#">MEGADRIVE</a></li>
+                            <li><a class="dropdown-item text-light" href="#">PLAYSTATION</a></li>
+                            <li><a class="dropdown-item text-light" href="#">XBOX</a></li>
+                            <li><a class="dropdown-item text-light" href="#">GAMEBOY</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown mx-5  ">
+                        <a class="nav-link dropdown-toggle mx-5 " id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  GENRES
+                </a>
+                        <ul class="dropdown-menu bg-dark border-danger" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item text-light" href="#">ACTION</a></li>
+                            <li><a class="dropdown-item text-light" href="#">COMBAT</a></li>
+                            <li><a class="dropdown-item text-light" href="#">AVENTURE</a></li>
+                            <li><a class="dropdown-item text-light" href="#">COURSE</a></li>
+                            <li><a class="dropdown-item text-light" href="#">PLATES-FORMES</a></li>
+                            <li><a class="dropdown-item text-light" href="#">RPG</a></li>
+                            <li><a class="dropdown-item text-light" href="#">FPS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-danger me-5 text-light" type="submit">Search</button>
+                </form>
+                <!-----------------------------------------------------------------Bouton trigger fenêtre modale------------------------------------------------------------>
+                <button type="button" onclick="entryPoint( 'bodyBasket','totalPrice','totalItem' )" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#basket">       
+>>>>>>> 44dc7773f1ed8685f7a0ebdb36576d8553e99b06
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
                         <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
                     </svg>
                 </button>
+<<<<<<< HEAD
+=======
+    </nav>
+    <!--------------------------------------------------------------------Fenêtre modale------------------------------------------------------------------------->
+    <div class="modal fade" tabindex="-1" id="basket" role="dialog" aria-hidden="true" aria-labelledby="basket">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" style="font-size: 180%;" id="basket">Votre panier</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="bodyBasket" data-simplebar data-simplebar-lg style="max-height: 250px;">
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-3">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="validBasketContent()">Valider</button>
+                        </div>
+                        <div class="col-2">
+                            <p>Nb:</p>
+                            <p id="totalItem"></p>
+                        </div>
+                        <div class="col-4">
+                            <p>Total:</p>
+                            <p id="totalPrice" ></p>
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-danger ms-auto" onclick="removeBasketContent()">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> 44dc7773f1ed8685f7a0ebdb36576d8553e99b06
         </div>
     </nav>
     <!-- ----------------------------------------------------Fin de la navbar --------------------------------------->
