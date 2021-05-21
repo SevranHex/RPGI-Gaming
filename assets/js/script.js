@@ -12,10 +12,7 @@ const itemId= "id",
       itemPrice= "price",
       itemConsoleType= "console",
       itemQuantity= "Qty";
-const euroFormatter = new Intl.NumberFormat('it-IT', {
-        style: 'currency',
-        currency: 'EUR'
-        })
+const euroFormatter= new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR'});
 
 let totalPrice= 0,
     totalItem= 0,
@@ -136,7 +133,6 @@ function getItemParam( itemRefName, paramType )
 function totalPriceUpdate( deltaPrice)
 {
     let deltaPriceValue= parseFloat(deltaPrice);
-    console.log( `totalPriceUpdate(): ${deltaPrice}`);
     if (deltaPriceValue >= 0)
     {
         // Add a new price
@@ -211,9 +207,7 @@ function removeSelectedItem( itemRefName)
             savedItemCatalog.forEach( itemIdx => {
                 if (itemIdx.id == originalitemRefName)
                 {
-                    console.info(itemIdx);
                     let itemNumberId= document.getElementById( buildItemIdNumber( originalitemRefName ));
-                    console.info(itemNumberId);
                     itemNumber= parseInt( itemNumberId.innerText);
                     let itemPriceId= document.getElementById( buildItemIdPrice( originalitemRefName ));
                     let value= parseFloat(itemPriceId.innerText.substr( 0, itemPriceId.innerText.length-2));
@@ -221,7 +215,6 @@ function removeSelectedItem( itemRefName)
                     totalPriceUpdate( `-${priceValue}`);
                     // Remove the selected item from display
                     let itemId= document.getElementById( buildItemIdName( originalitemRefName));
-                    console.info(itemId);
                     itemId.remove();
                     // Update the selected list
                     savedSelectedList.splice(idx,1);
@@ -229,10 +222,19 @@ function removeSelectedItem( itemRefName)
                     decreaseTotalItemNb( itemnumber);
                 }
             });
-           // Done
+            // Done
             break;
         }
     }
+}
+function closeModalWindow()
+{
+    document.querySelector(".modal").style.display = "none";
+}
+function validBasketContent()
+{
+    alert("Votre commande a bien été prise en compte");
+    closeModalWindow();
 }
 function removeBasketContent()
 {
@@ -243,17 +245,10 @@ function removeBasketContent()
         copiedList.forEach( item => {
             removeSelectedItem( buildItemIdName( item ));
             });
+        totalItemId.innerText= 0;
+        totalPriceId.innerText= euroFormatter.format(0);
+        closeModalWindow();
     }
-}
-function closeModalWindow()
-{
-    let modalId= document.getElementById("basket");
-    console.info(modalId);
-}
-function validBasketContent()
-{
-    alert("Votre commande a bien été prise en compte");
-    closeModalWindow();
 }
 function displaySelectedItem( parentId, refId, title, genre, imagePath, price, consoleType)
 {
