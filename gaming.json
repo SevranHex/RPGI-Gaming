@@ -1,11 +1,10 @@
 {
-    "products": [
-        {
+    "products": [{
             "id": 1,
             "title": "Super Mario World",
             "description": "Super Mario World sur Super Nes vous fait incarner les deux super plombiers Mario et Luigi, à la poursuite de Bowser qui a kidnappé pour la énième fois la princesse Peach. Exploitez de nouveaux objets tels que la plume permettant aux héros de planer pendant un court instant, et faites surtout connaissance avec le petit dinosaure vert Yoshi qui apparaît avec sa tribu pour la toute première fois dans la série.",
             "image": "https://image.jeuxvideo.com/images-sm/sn/s/m/smwosn0f.jpg",
-            "genre": "Combat",
+            "genre": "Plate-formes",
             "console": "SNES",
             "price": 32,
             "Qty": 10
@@ -29,7 +28,7 @@
             "genre": "Course",
             "console": "SNES",
             "price": 21,
-            "Qty" : 4
+            "Qty": 4
 
         },
         {
@@ -40,7 +39,7 @@
             "genre": "Combat",
             "console": "SNES",
             "price": 25,
-            "Qty" : 3
+            "Qty": 3
         },
         {
             "id": 5,
@@ -50,7 +49,7 @@
             "genre": "Plate-formes",
             "console": "MEGADRIVE",
             "price": 34,
-            "Qty" : 7
+            "Qty": 7
         },
         {
             "id": 6,
@@ -60,7 +59,7 @@
             "genre": "Beat Them All",
             "console": "MEGADRIVE",
             "price": 37,
-            "Qty" : 3
+            "Qty": 3
         },
         {
             "id": 7,
@@ -70,7 +69,7 @@
             "genre": "Beat Them All",
             "console": "MEGADRIVE",
             "price": 24,
-            "Qty" : 3
+            "Qty": 3
         },
         {
             "id": 8,
@@ -80,7 +79,7 @@
             "genre": "Combat",
             "console": "MEGADRIVE",
             "price": 43,
-            "Qty" : 5
+            "Qty": 5
         },
         {
             "id": 9,
@@ -90,7 +89,7 @@
             "genre": "Action",
             "console": "PLAYSTATION",
             "price": 26,
-            "Qty" : 2
+            "Qty": 2
         },
         {
             "id": 10,
@@ -100,7 +99,7 @@
             "genre": "Action",
             "console": "PLAYSTATION",
             "price": 39,
-            "Qty" : 5
+            "Qty": 5
         },
         {
             "id": 11,
@@ -110,7 +109,7 @@
             "genre": "Combat",
             "console": "PLAYSTATION",
             "price": 43,
-            "Qty" : 3
+            "Qty": 3
         },
         {
             "id": 12,
@@ -120,7 +119,7 @@
             "genre": "RPG",
             "console": "PLAYSTATION",
             "price": 34,
-            "Qty" : 3
+            "Qty": 3
         },
         {
             "id": 13,
@@ -130,7 +129,7 @@
             "genre": "RPG",
             "console": "PLAYSTATION",
             "price": 55,
-            "Qty" : 2
+            "Qty": 2
         },
         {
             "id": 14,
@@ -140,7 +139,7 @@
             "genre": "Course",
             "console": "PLAYSTATION",
             "price": 36,
-            "Qty" : 2
+            "Qty": 2
         },
         {
             "id": 15,
@@ -150,7 +149,7 @@
             "genre": "Plate-forme",
             "console": "Gameboy Color",
             "price": 23,
-            "Qty" : 4
+            "Qty": 4
         },
         {
             "id": 16,
@@ -160,7 +159,7 @@
             "genre": "Plate-forme",
             "console": "Gameboy Color",
             "price": 65,
-            "Qty" : 2
+            "Qty": 2
         },
         {
             "id": 17,
@@ -170,7 +169,7 @@
             "genre": "Puzzle",
             "console": "Gameboy Color",
             "price": 44,
-            "Qty" : 3
+            "Qty": 3
         },
         {
             "id": 18,
@@ -180,7 +179,7 @@
             "genre": "Plate-forme",
             "console": "Gameboy Color",
             "price": 36,
-            "Qty" : 2
+            "Qty": 2
         },
         {
             "id": 19,
@@ -191,7 +190,7 @@
             "console": "Gameboy Color",
             "price": 42,
             "Qty": 2
-        }, 
+        },
         {
             "id": 20,
             "title": "Batman : The Video Game",
@@ -200,9 +199,9 @@
             "genre": "Aventure",
             "console": "Gameboy Color",
             "price": 43,
-            "qty" : 5
-        
-        }, 
+            "qty": 5
+
+        },
         {
             "id": 21,
             "title": "Halo : Combat Evolved",
@@ -211,7 +210,7 @@
             "genre": "FPS",
             "console": "XBOX",
             "price": 63,
-            "qty" : 3
+            "qty": 3
         },
         {
             "id": 22,
@@ -221,7 +220,7 @@
             "genre": "Action",
             "console": "XBOX",
             "price": 23,
-            "qty" : 2
+            "qty": 2
         },
         {
             "id": 23,
@@ -231,17 +230,17 @@
             "genre": "RPG",
             "console": "XBOX",
             "price": 56,
-            "qty" : 6
+            "qty": 6
         },
         {
             "id": 24,
             "title": " Halo 2",
-            "description" : "Dans la suite du maintes fois acclamé Halo : Combat Evolved, la lutte contre les Covenants continue. Cette fois, la Terre est en danger et il ne reste que vous pour protéger l’humanité. Portez le combat chez l’ennemi et remportez la dernière bataille.",
+            "description": "Dans la suite du maintes fois acclamé Halo : Combat Evolved, la lutte contre les Covenants continue. Cette fois, la Terre est en danger et il ne reste que vous pour protéger l’humanité. Portez le combat chez l’ennemi et remportez la dernière bataille.",
             "image": "http://www.historiquedesjeuxvideo.com/bdd/jeu/img/XBox/884.jpg",
             "genre": "FPS",
             "console": "XBOX",
             "price": 65,
-            "qty" : 2
+            "qty": 2
         }
     ]
 }
