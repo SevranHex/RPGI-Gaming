@@ -1,7 +1,7 @@
 /*
  * JavaScript file
  */
-const prefixSelect= "select-",
+const prefixName= "select-",
       prefixPrice= "price-",
       prefixNombre= "nombre-";
 const itemId= "id",
@@ -83,6 +83,32 @@ function decreaseTotalItemNb()
         totalItem= 0;
     }
     totalItemId.innerText= totalItem;
+}
+function addPrefixIfNeccessary( tagString, tagPrefix)
+{
+    let answer;
+    // detect if the prefix is already present from the beginning
+    if (tagString.substring( 0, tagPrefix.length) === tagPrefix)
+    {
+        answer= tagString;
+    }
+    else
+    {
+        answer= `${tagPrefix}${tagString}`;
+    }
+    return answer;
+}
+function buildItemIdNumber( refId )
+{
+    return addPrefixIfNeccessary( refId, prefixNombre);
+}
+function buildItemIdName( refId )
+{
+    return addPrefixIfNeccessary( refId, prefixName);
+}
+function buildItemIdPrice( refId )
+{
+    return addPrefixIfNeccessary( refId, prefixPrice);
 }
 function getItemParam( itemRefName, paramType )
 {
@@ -172,12 +198,13 @@ function totalPriceUpdate( deltaPrice)
 function removeSelectedItem( itemRefName)
 {
     // Update the selected item list
-    let originalitemRefName= itemRefName.replace(prefixSelect,"");
+    let originalitemRefName= itemRefName.replace(prefixName,"");
     for (let idx=0; idx < savedSelectedList.length; idx++)
     {
         if (savedSelectedList[idx] == originalitemRefName)
         {
             // Item to be removed found !
+            console.log(`removeSelectedItem( ${itemRefName} ) --> original: ${originalitemRefName}`);
             let priceValue= 0;
             // Search its price
             savedItemCatalog.forEach( itemIdx => {
@@ -186,9 +213,10 @@ function removeSelectedItem( itemRefName)
                     priceValue= parseFloat(`-${itemIdx.price}`);
                 }
             });
-            totalPriceUpdate( priceValue)
+            totalPriceUpdate( priceValue);
             // Remove the selected item from display
-            let itemId= document.getElementById( itemRefName);
+            let itemId= document.getElementById( buildItemIdName(itemRefName));
+            console.info(itemId);
             itemId.remove();
             // Update the selected list
             savedSelectedList.splice(idx,1);
@@ -198,18 +226,6 @@ function removeSelectedItem( itemRefName)
             break;
         }
     }
-}
-function buildItemIdNumber( refId )
-{
-    return `${prefixNombre}${refId}`
-}
-function buildItemIdName( refId )
-{
-    return `${prefixSelect}${refId}`
-}
-function buildItemIdPrice( refId )
-{
-    return `${prefixPrice}${refId}`
 }
 function removeBasketContent()
 {
