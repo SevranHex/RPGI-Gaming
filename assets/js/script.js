@@ -106,7 +106,7 @@ const itemId= "id",
       itemImage= "image",
       itemPrice= "price",
       itemConsoleType= "console",
-      itemQuantity= "Qty";
+      itemQuantity= "qty";
 const euroFormatter= new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR'});
 
 let totalPrice= 0,
@@ -191,7 +191,7 @@ function getItemParam( itemRefName, paramType )
                 case itemImage: answer= itemIdx.image; break;
                 case itemPrice: answer= parseFloat(itemIdx.price); break;
                 case itemConsoleType: answer= itemIdx.console; break;
-                case itemQuantity: answer= parseInt(itemIdx.Qty); break;
+                case itemQuantity: answer= parseInt(itemIdx.qty); break;
                 default: answer= null;
             }
         }
@@ -223,6 +223,7 @@ function increaseOneItem( itemRefName )
     // Update the item number
     let itemfullName= buildItemIdNumber(itemRefName);
     let itemId= document.getElementById(itemfullName);
+    console.log(`increaseOneItem( ${itemRefName}), max allowed: ${maxAvailableItem}, current`)
     if (parseInt(itemId.innerText) >= maxAvailableItem)
     {
         let itemIdTitle= getItemParam( itemRefName, itemTitle);
@@ -423,9 +424,6 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
 }
 function fillCaddieBoddy( bodyIdName, totalPriceIdName, totalItemName, selectedItemList, allItemList)
 {
-    console.log("fillCaddieBoddy")
-    console.info(selectedItemList);
-    console.info(allItemList);
     if (selectedItemList.length <= 0) return;
     savedSelectedList= selectedItemList;
     savedItemCatalog= [...allItemList];
