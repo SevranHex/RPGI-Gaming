@@ -6,10 +6,11 @@ body {
     background: #000000;
     background: -webkit-linear-gradient(to right, #434343, #000000);
     background: linear-gradient(to right, #434343, #000000);
+
 }
 
 .gameParts {
-    width: 100%;
+    width: 70%;
     box-sizing: border-box;
 }
 
@@ -47,4 +48,3 @@ p {
     max-height: 500px;
     overflow-y: auto;
 }
-
