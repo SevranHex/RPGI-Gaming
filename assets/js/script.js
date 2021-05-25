@@ -56,7 +56,7 @@ function getInfo() {
                     image.src = element.image
                     gamePartsRight.className = "gameParts"
                     title.textContent = element.title
-                    title.className = "fs-5 text badge bg-danger"
+                    title.className = "fs-7 text badge bg-danger"
                     description.textContent = element.description.slice(0, 100) + "..."
                     gamePartsRight2.className = "row"
                     genre.textContent = element.genre

@@ -9,9 +9,8 @@ body {
 }
 
 .gameParts {
-    width: 300px;
-    height: auto;
-    float: left;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h2 {
