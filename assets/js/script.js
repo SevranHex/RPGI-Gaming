@@ -1,5 +1,8 @@
 //JSON -> JS
+let myCatalog=[],
+    myIdList=[];    
 getInfo();
+emptyData();
 
 function getInfo() {
     document.getElementById("gameChoice").innerText = ""
@@ -111,16 +114,20 @@ let totalPrice= 0,
     totalpriceId, 
     totalItemId;
 let savedSelectedList,
-    savedItemCatalog,
-    myCatalog=[],
-    myIdList=[];
+    savedItemCatalog;
 
+
+function emptyData()
+{
+    myCatalog=[];
+    myIdList=[];
+}
 function addToBasket( itemId)
 {
-    console.log(`addToBasket(${itemId})`)
-    if (itemId in myIdList == false)
+    let itemIdString= itemId.toString();
+    if (myIdList.indexOf( itemIdString ) != 0)
     {
-        myIdList.push(itemId.toString());
+        myIdList.push(itemIdString);
     }
 }
 function entryPoint( parentIdName,  totalPriceIdName, totalItemName)
@@ -296,6 +303,7 @@ function validBasketContent()
 {
     alert("Votre commande a bien été prise en compte");
     closeModalWindow();
+    emptyData();
 }
 function removeBasketContent()
 {
@@ -309,6 +317,7 @@ function removeBasketContent()
         totalItemId.innerText= 0;
         totalPriceId.innerText= euroFormatter.format(0);
         closeModalWindow();
+        emptyData();
     }
 }
 function displaySelectedItem( parentId, refId, title, genre, imagePath, price, consoleType)
