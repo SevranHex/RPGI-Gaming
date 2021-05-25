@@ -1,19 +1,33 @@
 //JSON -> JS
+getInfo();
+
 function getInfo() {
     document.getElementById("gameChoice").innerText = ""
     var x = document.getElementById("consoleSelect").selectedIndex;
     var xx = document.getElementById("genreSelect").selectedIndex;
 
-    var y = document.getElementById("consoleSelect").options;
-    var yy = document.getElementById("genreSelect").options;
-
-
+    var consoleList = document.getElementById("consoleSelect").options;
+    var genreOptionList = document.getElementById("genreSelect").options;
+    let defaultConsole="123456789",
+        defaultGenre="987654321";
+    if (genreOptionList[xx].length == 0)
+        {
+            genreOptionList[xx].value="ALL";
+        }
+    if (consoleList[x].length == 0)
+        {
+            consoleList[x].value="ALL";
+        }
     fetch("gaming.json")
         .then(data => data.json())
         .then(gameHome => {
             let isFind = false
             gameHome['products'].forEach(element => {
-                if (element.console.toLowerCase() === y[x].value.toLowerCase() && element.genre.toLowerCase() === yy[xx].value.toLowerCase()) {
+                myCatalog.push(element)
+                if (((element.console.toLowerCase() == consoleList[x].value.toLowerCase()) || (consoleList[x].value == "ALL"))
+                    && 
+                    ((element.genre.toLowerCase() == genreOptionList[xx].value.toLowerCase()) || (genreOptionList[xx].value == "ALL")))
+                {
                     isFind = true
                         //Création virtuel d'un élément HTML
                     let game = document.createElement('div')
@@ -53,7 +67,8 @@ function getInfo() {
                     ref.textContent = "réf: " + element.id
                     ref.className = "col"
                     buy.innerHTML = "Ajouter au panier"
-                    buy.className = "btn btn-outline-danger btn-sm"
+                    buy.className = "btn btn-warning"
+                    buy.setAttribute("onclick", `addToBasket(${element.id})`);
 
                     //Mise en place dans le HTML
                     gamePartsRight.appendChild(title)
@@ -71,6 +86,10 @@ function getInfo() {
                     let popover = new bootstrap.Popover(document.querySelector("#element_" + element.id), {
                         trigger: 'hover focus'
                     })
+                }
+            })
+        })
+    }
 /*
  * JavaScript file
  */
@@ -92,52 +111,20 @@ let totalPrice= 0,
     totalpriceId, 
     totalItemId;
 let savedSelectedList,
-    savedItemCatalog;
+    savedItemCatalog,
+    myCatalog=[],
+    myIdList=[];
 
+function addToBasket( itemId)
+{
+    console.log(`addToBasket(${itemId})`)
+    if (itemId in myIdList == false)
+    {
+        myIdList.push(itemId.toString());
+    }
+}
 function entryPoint( parentIdName,  totalPriceIdName, totalItemName)
 {
-    let myCatalog=[];
-    myCatalog[0]=   {
-                    "id": "1",
-                    "title": "Super Mario World",
-                    "description": "Super Mario World sur Super Nes vous fait incarner les deux super plombiers Mario et Luigi, à la poursuite de Bowser qui a kidnappé pour la énième fois la princesse Peach. Exploitez de nouveaux objets tels que la plume permettant aux héros de planer pendant un court instant, et faites surtout connaissance avec le petit dinosaure vert Yoshi qui apparaît avec sa tribu pour la toute première fois dans la série.",
-                    "image": "https://image.jeuxvideo.com/images-sm/sn/s/m/smwosn0f.jpg",
-                    "genre": "Combat",
-                    "console": "SNES",
-                    "price": "32",
-                    "Qty": "10"
-               };
-    myCatalog[1]=   {
-                    "id": "2",
-                    "title": "The Legend of Zelda : a Link to the Past",
-                    "description": "Dans the Legend of Zelda : A Link to the Past, le joueur dirige Link dans sa quête pour sauver Hyrule. Dans ce jeu d'action/aventure en 2D, il est possible de basculer du monde des ténèbres à celui de la lumière pour sauver la princesse Zelda du sorcier Agahnim et trouver les nombreux objets nécessaires à l'accomplissement de la quête",
-                    "image": "https://image.jeuxvideo.com/images/jaquettes/00051134/jaquette-the-legend-of-zelda-a-link-to-the-past-wii-u-wiiu-cover-avant-g-1386876665.jpg",
-                    "genre": "Aventure",
-                    "console": "SNES",
-                    "price": "22",
-                     "Qty": "5"
-                    };
-    myCatalog[2]=   {
-                    "id": "3",
-                    "title": "Super Mario Kart",
-                    "description": "Super Mario Kart sur Super Nintendo est un jeu de courses reprenant l'univers et les personnages de Mario. Après avoir choisi un pilote parmi les huit proposés, lancez-vous dans les quatre coupes différentes pour essayer d'atteindre la plus haute marche du podium. Grâce à des bonus ramassés sur le circuit, tous les coups sont permis, à commencer par le largage de peaux de banane et l'envoi de carapaces. Le mode Battle permet d'ailleurs d'affronter les autres à coup de carapaces.",
-                    "image": "https://image.jeuxvideo.com/medias/147938/1479376108-5962-jaquette-avant.jpg",
-                    "genre": "Course",
-                    "console": "SNES",
-                    "price": "21",
-                    "Qty" : "4"
-                    };
-    myCatalog[3]=   {
-                    "id": "4",
-                    "title": "Street Fighter 2",
-                    "description": "Street Fighter II est le deuxième épisode du jeu de combat sorti en 1988 sur diverses consoles et bornes d'arcade. Vous avez le choix parmi huit personnages ayant chacun son propre style de jeu et ses propres techniques spéciales. Dans le mode solo, vous devez affronter les sept autres personnages plus quatre boss cachés. A deux, chacun choisit son personnage pour tenter d'éliminer l'autre.",
-                    "image": "https://image.jeuxvideo.com/images/pc/s/t/strepc0f.jpg",
-                    "genre": "Combat",
-                    "console": "SNES",
-                    "price": "25",
-                    "Qty" : "3"
-                    };
-    let myIdList=[ "1","3","2"];
     fillCaddieBoddy( parentIdName, totalPriceIdName, totalItemName, myIdList, myCatalog);
 }
 function increaseTotalItemNb()
@@ -157,6 +144,7 @@ function decreaseTotalItemNb( nbr )
 function addPrefixIfNeccessary( tagString, tagPrefix)
 {
     let answer;
+    tagString= tagString.toString();
     // detect if the prefix is already present from the beginning
     if (tagString.substring( 0, tagPrefix.length) === tagPrefix)
     {
@@ -426,6 +414,9 @@ function displaySelectedItem( parentId, refId, title, genre, imagePath, price, c
 }
 function fillCaddieBoddy( bodyIdName, totalPriceIdName, totalItemName, selectedItemList, allItemList)
 {
+    console.log("fillCaddieBoddy")
+    console.info(selectedItemList);
+    console.info(allItemList);
     if (selectedItemList.length <= 0) return;
     savedSelectedList= selectedItemList;
     savedItemCatalog= [...allItemList];
@@ -446,128 +437,3 @@ function fillCaddieBoddy( bodyIdName, totalPriceIdName, totalItemName, selectedI
         });
     //debug console.info(bodyTagId);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*{
-            //Création virtuel d'un élément HTML
-            let consoles = document.createElement("ul")
-            let snes = document.createElement("li")
-            let megadrive = document.createElement("li")
-            let playstation = document.createElement("li")
-            let xbox = document.createElement("li")
-            let gameboy = document.createElement("li")
-
-            //Ajout des classes bootstrap
-            consoles.className = "navbar-nav m-auto navbar-nav-scroll "
-            consoles.className = ("data-bs-toggle", "dropdown")
-            snes.className = "dropdown-item text-light"
-            megadrive.className = "dropdown-item text-light"
-            playstation.className = "dropdown-item text-light"
-            xbox.className = "dropdown-item text-light"
-            gameboy.className = "dropdown-item text-light"
-
-            consoles.appendChild(snes)
-            consoles.appendChild(megadrive)
-            consoles.appendChild(playstation)
-            consoles.appendChild(xbox)
-            consoles.appendChild(gameboy)
-            })
-    })*/
-
-// document.getElementById("snes").onclick = function() {
-//     var request;
-//     if (window.XMLHttpRequest) {
-//         request = new XMLHttpRequest();
-//     } else {
-//         request = new ActiveXObject("Microsoft.XMLHTTP");
-//     }
-//     request.open('GET', 'gaming.json');
-//     request.onreadystatechange = function() {
-//         if ((request.readyState === 4) && (request.status === 200)) {
-//             var items = JSON.parse(request.responseText);
-//             document.getElementById("demo").innerHTML = items;
-//             console.log(items);
-//             var output = "<ul>";
-//             for (var key in items) {
-//                 output += "<li>" + items[key].bio + "</li>";
-//             }
-//             output += "</ul>";
-//             document.getElementById("demo").innerHTML = output;
-//         }
-//     };
